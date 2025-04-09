@@ -1,103 +1,184 @@
+"use client";
+
+import { JSX } from "react";
 import Image from "next/image";
+import justme from "../../public/justme.png";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaSpotify,
+  FaEnvelope,
+  FaXTwitter,
+  FaBluesky,
+} from "react-icons/fa6";
+import { Typewriter } from "react-simple-typewriter";
+import "./globals.css";
+
+declare interface SocialButtonProps {
+  href: string;
+  icon: JSX.Element;
+  label: string;
+}
+
+const SocialButton = ({ href, icon, label }: SocialButtonProps) => {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex font-semibold items-center justify-center gap-2 px-4 py-2 rounded-lg hover:scale-105 transition-transform bg-[#aeaeae] text-[#243238] mb-4"
+    >
+      {icon}
+      <span className="hidden sm:inline text-md">{label}</span>
+    </a>
+  );
+};
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen w-full flex flex-col md:flex-row">
+      <div className="w-full md:w-1/2 h-auto md:h-screen flex flex-col bg-[#243238] shadow-[5px_5px_25px_-2px_rgba(36,50,56,255)] z-10">
+        <div className="flex justify-center items-center mt-10">
+          <Image
+            src={justme}
+            alt="Fatih Karaşoğlu"
+            width={400}
+            height={400}
+            className="object-cover pointer-events-none"
+            priority
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="text-[#aeaeae] text-3xl font-bold text-center mt-6">
+          <h1>FATİH KARAŞOĞLU</h1>
+        </div>
+        <div className="flex justify-center items-center py-6">
+          <div className="w-2/4 grid grid-cols-2 gap-3">
+            <SocialButton
+              href="https://github.com/fatihkarasoglu"
+              icon={<FaGithub />}
+              label="GitHub"
+            />
+            <SocialButton
+              href="https://www.linkedin.com/in/fatihkarasoglu/"
+              icon={<FaLinkedin />}
+              label="LinkedIn"
+            />
+            <SocialButton
+              href="https://x.com/afkdev"
+              icon={<FaXTwitter />}
+              label="Twitter"
+            />
+            <SocialButton
+              href="https://bsky.app/profile/afkdev.bsky.social"
+              icon={<FaBluesky />}
+              label="Bluesky"
+            />
+            <SocialButton
+              href="mailto:f.karasoglu.01@gmail.com"
+              icon={<FaEnvelope />}
+              label="Contact"
+            />
+            <SocialButton href="#" icon={<FaSpotify />} label="Podcast" />
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full md:w-1/2 flex flex-col justify-center bg-[#aeaeae]">
+        <div className="px-6 py-10 text-[#243238] flex flex-col items-center">
+          <h2 className="text-3xl text-center font-bold">
+            <Typewriter
+              words={["Hi, I'm Fatih"]}
+              loop={2}
+              cursor
+              cursorStyle="."
+              typeSpeed={45}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </h2>
+          <h3 className="mt-2 text-center text-xl">
+            I'm a Junior Frontend Software Developer.
+          </h3>
+          <h4 className="w-40 mt-2 text-center font-semibold rounded-full py-1 px-3 text-[#00a251] hover:text-[#00c366] bg-[#0a2c1e] hover:bg-[#0a3322] text-sm">
+            ● Open to work
+          </h4>
+        </div>
+        <div className="px-6 text-[#243238]">
+          <h5 className="text-2xl font-bold mb-4">Projects</h5>
+          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
+            <div className="bg-[#243238] text-[#aeaeae] p-6 rounded-2xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Text Genius</h3>
+                <p className="text-sm mb-4">
+                  A website where the user can view statistics such as
+                  characters, words, sentences, paragraphs, pronouns, and
+                  longest words in their text.
+                </p>
+                <div className="flex flex-wrap gap-2 text-xs">
+                  <span className="bg-[#2e3b43] px-2 py-1 rounded">React</span>
+                  <span className="bg-[#2e3b43] px-2 py-1 rounded">
+                    Tailwindcss
+                  </span>
+                  <span className="bg-[#2e3b43] px-2 py-1 rounded">Mui</span>
+                  <span className="bg-[#2e3b43] px-2 py-1 rounded">i18n</span>
+                </div>
+              </div>
+              <div className="flex gap-3 mt-6">
+                <a
+                  href="https://github.com/fatihkarasoglu/text-genius"
+                  target="_blank"
+                  className="bg-[#aeaeae] text-[#243238] px-4 py-1 rounded-full text-sm hover:bg-white transition-colors hover:scale-105"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://fatihkarasoglu.github.io/text-genius/"
+                  target="_blank"
+                  className="bg-[#aeaeae] text-[#243238] px-4 py-1 rounded-full text-sm hover:bg-white transition-colors hover:scale-105"
+                >
+                  Live Demo
+                </a>
+              </div>
+            </div>
+            <div className="bg-[#243238] text-[#aeaeae] p-6 rounded-2xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Snake Game</h3>
+                <p className="text-sm mb-4">
+                  A mobile compatible website where the user can view statistics
+                  such as score, highest score, etc. for nostalgic purposes of
+                  the Nokia 3310 snake game.
+                </p>
+                <div className="flex flex-wrap gap-2 text-xs">
+                  <span className="bg-[#2e3b43] px-2 py-1 rounded">React</span>
+                  <span className="bg-[#2e3b43] px-2 py-1 rounded">Css</span>
+                  <span className="bg-[#2e3b43] px-2 py-1 rounded">
+                    GitHub Pages
+                  </span>
+                </div>
+              </div>
+              <div className="flex gap-3 mt-6">
+                <a
+                  href="https://github.com/fatihkarasoglu/snake-game-with-react"
+                  target="_blank"
+                  className="bg-[#aeaeae] text-[#243238] px-4 py-1 rounded-full text-sm hover:bg-white transition-colors hover:scale-105"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://fatihkarasoglu.github.io/snake-game-with-react/"
+                  target="_blank"
+                  className="bg-[#aeaeae] text-[#243238] px-4 py-1 rounded-full text-sm hover:bg-white transition-colors hover:scale-105"
+                >
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-auto text-center py-2 text-sm text-[#243238]">
+          © 2025
+        </div>
+      </div>
+    </main>
   );
 }
