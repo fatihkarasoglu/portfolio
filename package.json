@@ -1,6 +1,7 @@
 {
   "name": "fatihkarasoglu",
   "version": "0.1.0",
+  "homepage": "https://fatihkarasoglu.github.io/portfolio/",
   "private": true,
   "scripts": {
     "dev": "next dev",

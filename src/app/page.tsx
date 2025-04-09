@@ -97,7 +97,7 @@ export default function Home() {
             />
           </h2>
           <h3 className="mt-2 text-center text-xl">
-            I'm a Junior Frontend Software Developer.
+            I&apos;m a Junior Frontend Software Developer.
           </h3>
           <h4 className="w-40 mt-2 text-center font-semibold rounded-full py-1 px-3 text-[#00a251] hover:text-[#00c366] bg-[#0a2c1e] hover:bg-[#0a3322] text-sm">
             ● Open to work
