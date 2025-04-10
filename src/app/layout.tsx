@@ -28,7 +28,9 @@ export default function RootLayout({
         <link
           rel="icon"
           type="image/png"
-          href="/justmeicon.png"
+          href={`${
+            process.env.NODE_ENV === "production" ? "/justmeicon.png" : ""
+          }/justmeicon.png`}
           sizes="48x48"
         />
         <link rel="shortcut icon" href="/justme.png" />
