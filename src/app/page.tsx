@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <main className="min-h-screen w-full flex flex-col md:flex-row">
       <div className="w-full md:w-1/2 h-auto md:h-screen flex flex-col bg-[#243238] shadow-[5px_5px_25px_-2px_rgba(36,50,56,255)] z-10">
-        <div className="flex justify-center items-center mt-10">
+        <div className="flex justify-center items-center mt-10 relative">
           <Image
             src={justme}
             alt="Fatih Karaşoğlu"
@@ -46,6 +46,11 @@ export default function Home() {
             height={400}
             className="object-cover pointer-events-none"
             priority
+          />
+          <iframe
+            src="https://lottie.host/embed/c47bf96d-a432-4eb7-a46c-aa9737802a9c/s679d5D55T.json"
+            allowFullScreen
+            className="w-full h-full absolute z-10 pointer-events-none"
           />
         </div>
         <div className="text-[#aeaeae] text-3xl font-bold text-center mt-6">
