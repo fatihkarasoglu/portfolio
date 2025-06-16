@@ -37,7 +37,7 @@ const SocialButton = ({ href, icon, label }: SocialButtonProps) => {
 export default function Home() {
   return (
     <main className="min-h-screen w-full flex flex-col md:flex-row">
-      <div className="w-full md:w-1/2 h-auto md:h-screen flex flex-col bg-[#243238] shadow-[5px_5px_25px_-2px_rgba(36,50,56,255)] z-10">
+      <div className="md:sticky top-0 w-full md:w-1/2 h-auto md:h-screen flex-col bg-[#243238] shadow-[5px_5px_25px_-2px_rgba(36,50,56,255)] z-10">
         <div className="flex justify-center items-center mt-10 relative">
           <Image
             src={justme}
@@ -88,7 +88,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full md:w-1/2 flex flex-col justify-center bg-[#aeaeae]">
+      <div className="overflow-y-auto w-full md:w-1/2 flex flex-col justify-center bg-[#aeaeae]">
         <div className="px-6 py-10 text-[#243238] flex flex-col items-center">
           <h2 className="text-3xl text-center font-bold">
             <Typewriter
@@ -111,6 +111,78 @@ export default function Home() {
         <div className="px-6 text-[#243238]">
           <h5 className="text-2xl font-bold mb-4">Projects</h5>
           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
+            <div className="bg-[#243238] text-[#aeaeae] p-6 rounded-2xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Active Mind</h3>
+                <p className="text-sm mb-4">
+                  My mobile application where elderly people can create charts
+                  with their daily blood pressure measurements and exercise
+                  their minds with simple puzzle games.
+                </p>
+                <div className="flex flex-wrap gap-2 text-xs">
+                  <span className="bg-[#2e3b43] px-2 py-1 rounded">
+                    React Native
+                  </span>
+                  <span className="bg-[#2e3b43] px-2 py-1 rounded">
+                    Tailwind Css
+                  </span>
+                  <span className="bg-[#2e3b43] px-2 py-1 rounded">
+                    Typescript
+                  </span>
+                  <span className="bg-[#2e3b43] px-2 py-1 rounded">
+                    Chart Kit
+                  </span>
+                </div>
+              </div>
+              <div className="flex gap-3 mt-6">
+                <a
+                  href="https://github.com/fatihkarasoglu/active-mind-app"
+                  target="_blank"
+                  className="bg-[#aeaeae] text-[#243238] px-4 py-1 rounded-full text-sm hover:bg-white transition-colors hover:scale-105"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+            {/* <div className="bg-[#243238] text-[#aeaeae] p-6 rounded-2xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Chrono Map</h3>
+                <p className="text-sm mb-4">
+                  My mobile application where the user can read a short summary
+                  of the artistic activities within the location and date range
+                  selected by the user on the map using artificial intelligence.
+                </p>
+                <div className="flex flex-wrap gap-2 text-xs">
+                  <span className="bg-[#2e3b43] px-2 py-1 rounded">
+                    React Native
+                  </span>
+                  <span className="bg-[#2e3b43] px-2 py-1 rounded">
+                    Tailwind Css
+                  </span>
+                  <span className="bg-[#2e3b43] px-2 py-1 rounded">
+                    Typescript
+                  </span>
+                </div>
+              </div>
+              <div className="flex gap-3 mt-6">
+                <a
+                  href="https://github.com/fatihkarasoglu/snake-game-with-react"
+                  target="_blank"
+                  className="bg-[#aeaeae] text-[#243238] px-4 py-1 rounded-full text-sm hover:bg-white transition-colors hover:scale-105"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://fatihkarasoglu.github.io/snake-game-with-react/"
+                  target="_blank"
+                  className="bg-[#aeaeae] text-[#243238] px-4 py-1 rounded-full text-sm hover:bg-white transition-colors hover:scale-105"
+                >
+                  Live Demo
+                </a>
+              </div>
+            </div> */}
+
             <div className="bg-[#243238] text-[#aeaeae] p-6 rounded-2xl shadow-lg flex flex-col justify-between">
               <div>
                 <h3 className="text-xl font-semibold mb-2">Text Genius</h3>
